@@ -1,0 +1,21 @@
+[project]
+name = "projet-2026"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "calplot>=0.1.7.5",
+    "nbformat>=4.2.0",
+    "numpy==1.26.4",
+    "pandas>=2.3.3",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "skforecast>=0.19.1",
+    "update>=0.0.1",
+    "xgboost>=3.1.3",
+]
+
+
+
+#"calmap>=0.0.11"
