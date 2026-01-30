@@ -70,8 +70,11 @@ data_gare = data_gare[["NOM_GARE", "X", "Y", "Geo Point"]]
 data_gare['NOM_GARE'] = data_gare['NOM_GARE'].str.strip().str.upper()
 data_gare = data_gare.drop_duplicates()
 
+#====================limitations du nombre de gare ==================
 
-def df_concated():
+
+
+def df_concated( min_observations = 3888):
     """
     Concatène une liste de DataFrames en un seul DataFrame.
     
@@ -99,9 +102,12 @@ def df_concated():
     ANNEE=df['DATE'].dt.year,
     MOIS=df['DATE'].dt.month,
     JOUR=df['DATE'].dt.day,
-    dayofweek = df['DATE'].dt.dayofweek)  
+    dayofweek = df['DATE'].dt.dayofweek) 
 
-    
+    gare_counts = df["LIBELLE_ARRET"].value_counts()
+    gare_valide = gare_counts[gare_counts >= min_observations].index.tolist()
+    print(f" {len (gare_valide)} boutiques avec ≥{min_observations} observations")
+    df = df[df["LIBELLE_ARRET"].isin (gare_valide)]
     
 
     return df

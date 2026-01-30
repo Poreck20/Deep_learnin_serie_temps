@@ -6,14 +6,17 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "calplot>=0.1.7.5",
+    "keras>=3.0,<4.0",
     "nbformat>=4.2.0",
     "numpy==1.26.4",
     "pandas>=2.3.3",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
+    "shap==0.46.0",
     "skforecast>=0.19.1",
+    "tensorflow>=2.18.1",
     "update>=0.0.1",
-    "xgboost>=3.1.3",
+    "xgboost==2.0.3",
 ]
 
 
